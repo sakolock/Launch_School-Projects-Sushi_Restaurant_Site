@@ -1,0 +1,30 @@
+include /_mixins
+
+doctype html
+html
+  head
+    title= title
+    link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' integrity='sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN' crossorigin='anonymous')    
+    +stylesheet_link_tag('application')
+    +javascript_include_tag('vendor/all')
+    +javascript_include_tag('handlebars_templates')    
+  body
+    header
+      a.logo(href='/')
+        img(src='images/logo.png' alt='logo')
+      .cart
+
+    main
+      #cart
+      #content
+        block content
+
+    footer
+    
+    +javascript_include_tag('application')
+    +javascript_include_tag('models/menu', 'models/item')
+    +javascript_include_tag('collections/items', 'collections/cart_items')
+    +javascript_include_tag('views/menu', 'views/item', 'views/cart', 'views/cart_summary', 'views/item_details', 'views/invoice', 'views/invoice_item')
+    script(type='text/javascript').
+      App.items = new Items(!{JSON.stringify(items)});
+    +javascript_include_tag('router')
