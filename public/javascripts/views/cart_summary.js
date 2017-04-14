@@ -12,6 +12,6 @@ var CartSummaryView = Backbone.View.extend({
   },
   initialize: function() {
     this.render();
-    this.listenTo(this.collection, 'cart_updated', this.render.bind(this));
+    this.listenTo(this.collection, 'cart_updated', this.render);
   }
 });

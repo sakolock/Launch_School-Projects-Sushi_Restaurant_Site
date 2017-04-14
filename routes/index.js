@@ -9,11 +9,4 @@ module.exports = function(router) {
       items: MenuItems.get()
     });
   });
-
-  router.post('/', function(req, res) {
-    console.log('posted');
-    res.render('index', {
-      items: MenuItems.get()
-    });
-  });
 }

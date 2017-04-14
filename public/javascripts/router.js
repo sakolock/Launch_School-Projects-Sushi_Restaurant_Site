@@ -4,7 +4,7 @@ var router = new (Backbone.Router.extend({
     "checkout": "createInvoice"
   },
   menu: function() {
-    App.menuView();
+    App.renderMenuView();
     this.navigate('/');
   },
   renderItemDetails: function(id) {

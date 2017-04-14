@@ -2,7 +2,7 @@ var App = {
   templates: JST,
   $el: $('main'),
   $content: $('#content'),
-  menuView: function() {
+  renderMenuView: function() {
     this.menu = new MenuView()
     this.renderItems();
     this.createCart();
@@ -10,6 +10,9 @@ var App = {
   },
   createCart: function() {
     this.cart = new CartItems();
+    this.renderCart();
+  },
+  renderCart: function() {
     this.cart.view = new CartView({
       collection: this.cart
     });
