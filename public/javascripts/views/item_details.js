@@ -48,12 +48,6 @@ var ItemDetailView = Backbone.View.extend({
 
     App.trigger('add_to_cart', this.model);
   },
-  navNext: function(e) {
-    var $e = $(e.currentTarget);
-    var nextId = $(this).
-
-    console.log($e);
-  },
   render: function() {
     var id = this.model.get('id');
 

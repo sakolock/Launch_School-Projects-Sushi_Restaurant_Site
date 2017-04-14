@@ -1,5 +1,5 @@
 var CartSummaryView = Backbone.View.extend({
-  $el: $('header .cart'),
+  el: 'header .cart',
   template: App.templates.cart_summary,
   render: function() {
     var quantity = this.collection ? this.collection.getQuantity() : 0;
@@ -7,8 +7,6 @@ var CartSummaryView = Backbone.View.extend({
     this.$el.html(this.template({
       totalItems: quantity
     }));
-
-    $('header .cart').html(this.$el);
   },
   initialize: function() {
     this.render();
